@@ -1,0 +1,486 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "L5 OpenApi",
+        "description": "API documentation",
+        "contact": {
+            "email": "test@test.test"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost/api/v1",
+            "description": ""
+        }
+    ],
+    "paths": {
+        "/auto": {
+            "get": {
+                "tags": [
+                    "Auto"
+                ],
+                "description": "All Auto page",
+                "operationId": "allAuto",
+                "responses": {
+                    "200": {
+                        "description": "Main Auto page"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Auto"
+                ],
+                "description": "Create Auto",
+                "operationId": "createAuto",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Auto created"
+                    },
+                    "400": {
+                        "description": "Fails Auto create"
+                    }
+                }
+            }
+        },
+        "/auto/{id}": {
+            "get": {
+                "tags": [
+                    "Auto"
+                ],
+                "description": "Auto by id",
+                "operationId": "autoById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Page Auto"
+                    },
+                    "404": {
+                        "description": "Page Auto not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Auto"
+                ],
+                "description": "Update Auto by id",
+                "operationId": "updateAutoById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Auto updated"
+                    },
+                    "400": {
+                        "description": "Fails on update Auto"
+                    },
+                    "404": {
+                        "description": "Page Auto not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Auto"
+                ],
+                "description": "Delete Auto",
+                "operationId": "deleteAuto",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Auto delete"
+                    },
+                    "404": {
+                        "description": "Auto not found"
+                    }
+                }
+            }
+        },
+        "/driver": {
+            "get": {
+                "tags": [
+                    "Driver"
+                ],
+                "description": "All Driver page",
+                "operationId": "allDriver",
+                "responses": {
+                    "200": {
+                        "description": "Main Driver page"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Driver"
+                ],
+                "description": "Create Driver",
+                "operationId": "createDriver",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Driver created"
+                    },
+                    "400": {
+                        "description": "Driver not created"
+                    }
+                }
+            }
+        },
+        "/driver/{id}": {
+            "get": {
+                "tags": [
+                    "Driver"
+                ],
+                "description": "Driver by id",
+                "operationId": "driverById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Page Driver"
+                    },
+                    "404": {
+                        "description": "Page Driver not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Driver"
+                ],
+                "description": "Update Driver by id",
+                "operationId": "updateDriverById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Driver updated"
+                    },
+                    "400": {
+                        "description": "Fails on update Driver"
+                    },
+                    "404": {
+                        "description": "Page Driver not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Driver"
+                ],
+                "description": "Delete driver",
+                "operationId": "deleteDriver",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Driver delete"
+                    },
+                    "404": {
+                        "description": "Page Driver not found"
+                    }
+                }
+            }
+        },
+        "/relation": {
+            "get": {
+                "tags": [
+                    "Relation"
+                ],
+                "description": "All Relation page",
+                "operationId": "allRelation",
+                "responses": {
+                    "200": {
+                        "description": "Main relation page"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Relation"
+                ],
+                "description": "Create Relation",
+                "operationId": "createRelation",
+                "parameters": [
+                    {
+                        "name": "driver_id",
+                        "in": "query",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "auto_id",
+                        "in": "query",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Page Relation"
+                    },
+                    "400": {
+                        "description": "Relation not created"
+                    }
+                }
+            }
+        },
+        "/relation/updateByAuto/{auto_id}": {
+            "put": {
+                "tags": [
+                    "Relation"
+                ],
+                "description": "Update by Auto id",
+                "operationId": "updateByAuto",
+                "parameters": [
+                    {
+                        "name": "auto_id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "driver_id",
+                        "in": "query",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Update by Auto"
+                    },
+                    "400": {
+                        "description": "Fails on update by Driver"
+                    },
+                    "404": {
+                        "description": "Page not found"
+                    }
+                }
+            }
+        },
+        "/relation/updateByDriver/{driver_id}": {
+            "put": {
+                "tags": [
+                    "Relation"
+                ],
+                "description": "Update by Driver id",
+                "operationId": "updateByDriver",
+                "parameters": [
+                    {
+                        "name": "driver_id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "auto_id",
+                        "in": "query",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Update by Driver"
+                    },
+                    "400": {
+                        "description": "Fails on update by Driver"
+                    },
+                    "404": {
+                        "description": "Page not found"
+                    }
+                }
+            }
+        },
+        "/relation/deleteByAuto/{auto_id}": {
+            "delete": {
+                "tags": [
+                    "Relation"
+                ],
+                "description": "Delete by Auto",
+                "operationId": "deleteByAuto",
+                "parameters": [
+                    {
+                        "name": "auto_id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Page Relation"
+                    },
+                    "404": {
+                        "description": "Page not found"
+                    }
+                }
+            }
+        },
+        "/relation/deleteByDriver/{driver_id}": {
+            "delete": {
+                "tags": [
+                    "Relation"
+                ],
+                "description": "Delete by Driver",
+                "operationId": "deleteByDriver",
+                "parameters": [
+                    {
+                        "name": "driver_id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Page Relation"
+                    },
+                    "404": {
+                        "description": "Page not found"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Auto",
+            "description": ""
+        },
+        {
+            "name": "Driver",
+            "description": ""
+        },
+        {
+            "name": "Relation",
+            "description": ""
+        }
+    ]
+}
